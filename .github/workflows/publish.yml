@@ -1,0 +1,25 @@
+name: Publish
+
+
+on:
+
+  push:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+
+jobs:
+
+  composer:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - uses: katyo/publish-crates@v1
+        with:
+          registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
