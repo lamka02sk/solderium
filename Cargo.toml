@@ -1,5 +1,7 @@
 [package]
 name = "solderium"
+description = "Simple Rust library for merging directories using symlinks"
+license = "MIT"
 version = "0.1.0"
 edition = "2021"
 
